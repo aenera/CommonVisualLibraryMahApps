@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls">
+    <Style x:Key="CircleDropDownButton"
+           BasedOn="{StaticResource {x:Type controls:DropDownButton}}"
+           TargetType="controls:DropDownButton">
+        <Setter Property="ArrowVisibility" Value="Collapsed" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="ButtonStyle" Value="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource MahApps.Metro.Styles.MetroCircleFocusVisual}" />
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,104 @@
+﻿<controls:MetroWindow x:Class="Ext.ItemEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:converters="clr-namespace:Converters"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        Height="Auto" Width="300" WindowStartupLocation="CenterScreen" Title="{Binding WindowTitle}">
+    <Grid>
+        <Grid.Resources>
+            <converters:BoolToVisibilityConverter x:Key="Bool2VisibilityConverter"/>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="1"></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <!--  ITEM1  -->
+        <TextBlock 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Text="{Binding ParamLabel}" 
+            FontStyle="Italic" 
+            VerticalAlignment="Center" 
+            Margin="15,0,0,0">
+            
+        </TextBlock>
+        <TextBox 
+            x:Name="Edit1" 
+            Grid.Row="0" 
+            Grid.Column="1" 
+            Text="{Binding ParamText, Mode=TwoWay}" 
+            Width="150" 
+            Height="25" 
+            HorizontalAlignment="Left" 
+            VerticalContentAlignment="Center">
+        </TextBox>
+
+         <!--  ITEM2  -->
+        <TextBlock 
+            Grid.Row="2" 
+            Grid.Column="0" 
+            Text="{Binding ParamLabel2}" 
+            FontStyle="Italic" 
+            VerticalAlignment="Center" 
+            Margin="15,0,0,0"
+            Visibility="{Binding Param2IsEnabled, Converter={StaticResource ResourceKey=Bool2VisibilityConverter}}"
+            >
+
+        </TextBlock>
+        <TextBox 
+            x:Name="Edit2" 
+            Grid.Row="2" 
+            Grid.Column="1" 
+            Text="{Binding ParamText2, Mode=TwoWay}" 
+            Width="150" 
+            Height="25" 
+            HorizontalAlignment="Left" 
+            VerticalContentAlignment="Center"
+            Visibility="{Binding Param2IsEnabled, Converter={StaticResource ResourceKey=Bool2VisibilityConverter}}"
+            >
+        </TextBox>
+        <Rectangle 
+            Grid.Row="4" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="2" 
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Stretch" 
+            Fill="{DynamicResource GrayBrush10}"/>
+
+        <Button 
+            Grid.Row="6" 
+            Grid.Column="0" 
+            Width="60" 
+            Height="25" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center" 
+            Margin="10,0,0,0" 
+            x:Name="Cancel" 
+            Click="Cancel_OnClick">
+            Cancel
+        </Button>
+        <Button 
+            Grid.Row="6" 
+            Grid.Column="1" 
+            Width="60" 
+            Height="25" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Center" 
+            Margin="0,0,10,0" 
+            x:Name="Ok" 
+            Click="Ok_OnClick">
+            OK
+        </Button>
+    </Grid>
+</controls:MetroWindow>

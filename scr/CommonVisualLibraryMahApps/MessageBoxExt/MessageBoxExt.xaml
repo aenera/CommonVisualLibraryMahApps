@@ -1,0 +1,46 @@
+﻿<controls:MetroWindow x:Class="Ext.MessageBoxExt"
+                               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                               xmlns:simpleChildWindow="clr-namespace:MahApps.Metro.SimpleChildWindow;assembly=MahApps.Metro.SimpleChildWindow"
+                               xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                               xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                               Title="{Binding Caption}"
+                               d:DesignHeight="300"
+                               d:DesignWidth="300"
+                               BorderBrush="{DynamicResource AccentBaseColorBrush}"
+                               BorderThickness="1"
+                               GlowBrush="{DynamicResource AccentColorBrush}"
+                               ShowCloseButton="True"
+                               mc:Ignorable="d"
+                                Width="300"
+                                Height="180" WindowStartupLocation="CenterScreen" PreviewKeyDown="MessageBoxExt_OnPreviewKeyDown">
+    <controls:MetroWindow.Resources>
+		<ResourceDictionary>
+			<BooleanToVisibilityConverter x:Key="Boolean2VisibilityConverter"></BooleanToVisibilityConverter>
+		</ResourceDictionary>
+	</controls:MetroWindow.Resources>
+	<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto" MaxHeight="50" MinHeight="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock  Grid.Row ="0" Canvas.ZIndex ="99" Margin="0,10,0,20" Text="{Binding Text}" FontSize="20" TextWrapping="WrapWithOverflow" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
+        <Grid Grid.Row ="1" Canvas.ZIndex ="99">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!--<Button Grid.Column="{Binding OkButtonGridPosition}" Content="{Binding OkButtonText}" Visibility="{Binding OkButton, Converter={StaticResource Boolean2VisibilityConverter}}" Command="{Binding OkCommand}"></Button>
+            <Button Grid.Column="{Binding CancelButtonGridPosition}" Content="{Binding CancelButtonText}" Visibility="{Binding CancelButton, Converter={StaticResource Boolean2VisibilityConverter}}" Command="{Binding CancelCommand}"></Button>-->
+            <Button x:Name="BtnOk" Grid.Column="{Binding OkButtonGridPosition}" Width="60" Height="30" Margin="10,0,10,10"  Content="{Binding OkButtonText}" Visibility="{Binding OkButton, Converter={StaticResource Boolean2VisibilityConverter}}" Click="OkCommand_OnClick"></Button>
+            <Button x:Name="BtnCancel" Grid.Column="{Binding CancelButtonGridPosition}" Width="60" Height="30" Margin="10,0,10,10" Content="{Binding CancelButtonText}" Visibility="{Binding CancelButton, Converter={StaticResource Boolean2VisibilityConverter}}" Click="CancelCommand_OnClick"></Button>
+        </Grid>
+        <Border Grid.Row ="0" Grid.RowSpan="2" Canvas.ZIndex ="1" Visibility="{Binding IconIcon, Converter={StaticResource Boolean2VisibilityConverter}}"  Opacity="0.5">
+	        <iconPacks:PackIconModern Width="20" Height="20" Kind="{Binding IconKind}"/>
+	    </Border>
+    </Grid>
+</controls:MetroWindow>
+

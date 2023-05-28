@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 
-namespace Ext
+namespace CommonVisualLibraryMahApps.Window
 {
     /// <summary>
     /// Логика взаимодействия для SelectTablesWindow.xaml

@@ -1,7 +1,6 @@
-﻿<controls:MetroWindow x:Class="Ext.ItemEditWindow"
+﻿<controls:MetroWindow x:Class="CommonVisualLibraryMahApps.Window.ItemEditWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
         xmlns:converters="clr-namespace:Converters"
         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         Height="Auto" Width="300" WindowStartupLocation="CenterScreen" Title="{Binding WindowTitle}">

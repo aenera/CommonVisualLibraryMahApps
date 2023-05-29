@@ -31,6 +31,13 @@ namespace CommonVisualLibraryMahApps.Window
             set { _windowTitle = value; SendPropertyChanged("WindowTitle"); }
         }
 
+        private int _windowHeight;
+        public int WindowHeight
+        {
+            get { return _windowHeight; }
+            set { _windowHeight = value; SendPropertyChanged("WindowHeight"); }
+        }
+
         private string _paramLabel;
         public String ParamLabel
         {
@@ -61,7 +68,10 @@ namespace CommonVisualLibraryMahApps.Window
         public bool Param2IsEnabled
         {
             get { return _param2IsEnabled; }
-            set { _param2IsEnabled = value; SendPropertyChanged("Param2IsEnabled"); }
+            set { 
+                _param2IsEnabled = value; SendPropertyChanged("Param2IsEnabled");
+                WindowHeight = _param2IsEnabled ?  150 : 100;
+            }
         }
        
 

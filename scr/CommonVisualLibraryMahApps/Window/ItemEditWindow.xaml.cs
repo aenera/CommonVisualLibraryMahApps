@@ -70,7 +70,7 @@ namespace CommonVisualLibraryMahApps.Window
             get { return _param2IsEnabled; }
             set { 
                 _param2IsEnabled = value; SendPropertyChanged("Param2IsEnabled");
-                WindowHeight = _param2IsEnabled ?  150 : 100;
+                WindowHeight = _param2IsEnabled ?  150 : 120;
             }
         }
        

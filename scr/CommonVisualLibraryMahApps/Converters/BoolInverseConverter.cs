@@ -6,7 +6,7 @@ using System.Windows.Data;
 using System.Globalization;
 using System.Windows;
 
-namespace Converters
+namespace CommonVisualLibraryMahApps.Converters
 {
     /// <summary>
     /// Converts a null value to Visibility.Visible and any other value to Visibility.Collapsed

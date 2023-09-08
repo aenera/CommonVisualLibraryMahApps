@@ -5,13 +5,14 @@ using System.Text;
 using System.Windows.Data;
 using System.Globalization;
 using System.Windows;
+using System.Collections;
 
-namespace Converters
+namespace CommonVisualLibraryMahApps.Converters
 {
     /// <summary>
     /// Converts a null value to Visibility.Visible and any other value to Visibility.Collapsed
     /// </summary>
-    public class BoolToVisibilityConverter
+    public class CollectionCountToVisibilityConverter
         : IValueConverter
     {
         /// <summary>
@@ -28,7 +29,7 @@ namespace Converters
         {
             if (value == null)
                 return Visibility.Collapsed;
-            var flag = (value is bool && (bool)value);
+            var flag = (value is ICollection && ((ICollection)value).Count == 0 );
             var inverse = (parameter as string) == "inverse";
 
             if (inverse)

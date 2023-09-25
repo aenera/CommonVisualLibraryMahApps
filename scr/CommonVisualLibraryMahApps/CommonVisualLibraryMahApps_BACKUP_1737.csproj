@@ -135,7 +135,11 @@
     <Compile Include="Converters\BoolInverseConverter.cs" />
     <Compile Include="Converters\CollectionCountToVisibilityConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+<<<<<<< HEAD
     <Compile Include="Extensions\FocusExtension.cs" />
+=======
+    <Compile Include="Converters\CollectionCountToVisibilityConverter.cs" />
+>>>>>>> 68e7bae63ce1aaebb49f8e48adf8f776a4f64486
     <Compile Include="MessageBoxExt\MessageBoxExt.xaml.cs">
       <DependentUpon>MessageBoxExt.xaml</DependentUpon>
     </Compile>

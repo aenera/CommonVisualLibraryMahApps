@@ -133,9 +133,8 @@
   <ItemGroup>
     <Compile Include="Behaviors\ScrollIntoViewBehavior.cs" />
     <Compile Include="Converters\BoolInverseConverter.cs" />
-    <Compile Include="Converters\CollectionCountToVisibilityConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
-    <Compile Include="Extensions\FocusExtension.cs" />
+    <Compile Include="Converters\CollectionCountToVisibilityConverter.cs" />
     <Compile Include="MessageBoxExt\MessageBoxExt.xaml.cs">
       <DependentUpon>MessageBoxExt.xaml</DependentUpon>
     </Compile>
